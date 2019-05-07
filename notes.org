@@ -1,0 +1,8 @@
+* pieces
+** TODO make some valid request to github using request
+   get user's repo
+   - https://api.github.com/users/${user}/repos/${repo}/
+** TODO find template for http request from gitub which suits my needs
+** TODO figure out how to turn that data into images
+** TODO figure out deployment/packaging
+}
