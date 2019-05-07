@@ -1,6 +1,6 @@
 const request = require('request');
 const fs = require('fs');
-const private = require('../private.json');
+const private = require('./private.json');
 
 const API_ROOT = 'https://api.github.com';
 

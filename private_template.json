@@ -1,0 +1,4 @@
+// to test copy this file to "private.json" and add your token
+{
+  "github_token": "TOKEN"
+}
