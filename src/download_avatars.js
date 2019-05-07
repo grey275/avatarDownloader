@@ -2,8 +2,7 @@ const request = require('request');
 const fs = require('fs');
 const private = require('../private.json');
 
-// const user = 'grey275';
-// const repo = 'requestIntro';
+const [owner, repo] = process.argv.slice(2) || ['jquery', 'jquery'];
 
 const TOKEN = private.new_token;
 const API_ROOT = 'https://api.github.com';
@@ -50,13 +49,13 @@ function downloadImageByURL(url, filePath) {
 function downloadContributorAvatars(body) {
   const urls = getContributorAvatarURLs(body);
   urls.forEach((url, index) => {
-    downloadImageByURL(url, `${index}.jpeg`);
+    downloadImageByURL(url, `${repo}_${index}.jpeg`);
   })
 }
-
-
-const user = 'jquery';
-const repo = 'jquery';
-
-
-getRepoContributors(user, repo, downloadContributorAvatars);
+if (!(owner && repo)) {
+  console.log('ERROR: invalid arguments.');
+  console.log('Structure: [owner, repo]');
+} else {
+  console.log(`owner: ${owner}, repo: ${repo}`);
+  getRepoContributors(owner, repo, downloadContributorAvatars);
+}
