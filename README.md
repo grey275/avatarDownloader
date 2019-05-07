@@ -21,4 +21,6 @@ Install only dependency ([request](https://www.npmjs.com/package/request)):
 npm install
 ```
 
-Then, copy private_template.json to private.json and add your token
+Then, copy private_template.json to private.json and add your token.
+
+Enjoy!
